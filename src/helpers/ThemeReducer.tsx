@@ -5,3 +5,8 @@ export const theme = createTheme({
     raised: true,
   },
 });
+
+export enum RNEDefaultTheme {
+  Light = 'light',
+  Dark = 'dark',
+}

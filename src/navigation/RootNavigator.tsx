@@ -1,17 +1,32 @@
 import React from 'react';
-import {useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '@/views/home';
-function RootNavigator() {
-  const isDarkMode = useColorScheme() === 'dark';
-  console.log('isDarkMode', isDarkMode);
-  const Tab = createBottomTabNavigator();
+import {useMainTheme} from '@/hooks/useMainTheme';
+import NotificationScreen from '@/views/notification';
+import {Screens} from './interfaces';
+import UserScreen from '@/views/user';
+import NewsScreen from '@/views/news';
+import BottomTabIcon from '@/components/bottomtab-icon';
 
+function RootNavigator() {
+  useMainTheme();
+  const Tab = createBottomTabNavigator();
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Navigator
+        screenOptions={({route}) => ({
+          tabBarIcon: ({color, size}) => (
+            <BottomTabIcon route={route} color={color} size={size} />
+          ),
+        })}>
+        <Tab.Screen name={Screens.Home} component={HomeScreen} />
+        <Tab.Screen
+          name={Screens.Notification}
+          component={NotificationScreen}
+        />
+        <Tab.Screen name={Screens.User} component={UserScreen} />
+        <Tab.Screen name={Screens.News} component={NewsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
