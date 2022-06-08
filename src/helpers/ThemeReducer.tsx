@@ -1,9 +1,9 @@
 import {createTheme} from '@rneui/themed';
 
 export const theme = createTheme({
-  Button: {
-    raised: true,
-  },
+  // Button: {
+  //   raised: true,
+  // },
 });
 
 export enum RNEDefaultTheme {
