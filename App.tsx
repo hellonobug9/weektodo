@@ -12,7 +12,7 @@ import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {ThemeProvider} from '@rneui/themed';
 import RootNavigation from '@/navigation/RootNavigator';
-import {theme} from '@/helpers/ThemeReducer';
+import {theme} from '@/helpers/ThemeConfig';
 const App = () => {
   return (
     <SafeAreaProvider>

@@ -7,5 +7,6 @@ declare module '@rneui/themed' {
     // primaryDark: string;
     // secondaryLight: string;
     // secondaryDark: string;
+    text: string;
   }
 }

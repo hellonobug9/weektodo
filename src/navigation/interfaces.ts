@@ -3,4 +3,5 @@ export enum Screens {
   Notification = 'Notification',
   User = 'User',
   News = 'News',
+  Menu = 'Menu',
 }
