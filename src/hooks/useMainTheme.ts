@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import {useColorScheme} from 'react-native';
 import {useThemeMode} from '@rneui/themed';
-import {RNEDefaultTheme} from '@/helpers/ThemeConfig';
+import {RNEDefaultTheme} from '@/helpers';
 export const useMainTheme = () => {
   const isDarkMode = useColorScheme() === 'dark';
   const {setMode} = useThemeMode();

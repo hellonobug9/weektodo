@@ -9,14 +9,12 @@ import UserScreen from '@/views/user';
 import NewsScreen from '@/views/news';
 import BottomTabIcon from '@/components/bottomtab-icon';
 import AddTask from '@/components/add-task';
-import Icon from 'react-native-vector-icons/AntDesign';
-import {View} from 'react-native';
-import {Text, useTheme} from '@rneui/themed';
+// import {useTheme} from '@rneui/themed';
+import {TasksProvider} from '@/provider/task';
 function RootNavigator() {
   useMainTheme();
   const Tab = createBottomTabNavigator();
-  const {theme} = useTheme();
-
+  // const {theme} = useTheme();
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -33,9 +31,9 @@ function RootNavigator() {
           {props => {
             const {navigation, route} = props;
             return (
-              // <TasksProvider user={user} projectPartition={projectPartition}>
-              <HomeScreen navigation={navigation} route={route} />
-              // </TasksProvider>
+              <TasksProvider>
+                <HomeScreen navigation={navigation} route={route} />
+              </TasksProvider>
             );
           }}
         </Tab.Screen>

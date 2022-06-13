@@ -1,14 +1,14 @@
-import moment from 'moment';
+import moment, {Moment} from 'moment';
 
 interface DayOfCurrentWeek {
   id: number;
-  label: string;
+  label: Moment;
 }
 
 export const getDaysOfCurrentWeek = () => {
   let currentDate = moment();
   let weekStart = currentDate.clone().startOf('week');
-  let weekEnd = currentDate.clone().endOf('week');
+  // let weekEnd = currentDate.clone().endOf('week');
 
   let days: DayOfCurrentWeek[] = [];
   for (i = 1; i <= 7; i++) {
