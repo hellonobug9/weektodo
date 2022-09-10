@@ -14,6 +14,7 @@ import {TasksProvider} from '@/provider/task';
 function RootNavigator() {
   useMainTheme();
   const Tab = createBottomTabNavigator();
+  console.log('1');
   // const {theme} = useTheme();
   return (
     <NavigationContainer>
